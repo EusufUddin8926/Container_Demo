@@ -91,8 +91,9 @@ class HomeScreen extends StatelessWidget {
                 decoration: BoxDecoration(color: Colors.cyan),
                 accountName: Text("Md Eusuf Uddin"),
                 accountEmail: Text("eusuf.cse@gmail.com"),
-                currentAccountPicture: Image.network("https://e7.pngegg.com/pngimages/666/815/png-clipart-dart-google-chrome-web-application-flutter-darts-blue-angle.png"),
-                onDetailsPressed: (){
+                currentAccountPicture: Image.network(
+                    "https://e7.pngegg.com/pngimages/666/815/png-clipart-dart-google-chrome-web-application-flutter-darts-blue-angle.png"),
+                onDetailsPressed: () {
                   SnakbarMsg("Details clicked....", context);
                   Navigator.pop(context);
                 },
@@ -113,7 +114,6 @@ class HomeScreen extends StatelessWidget {
                 SnakbarMsg("Education clicked..", context);
                 Navigator.pop(context);
               },
-
             ),
             ListTile(
               title: Text("Contact"),
@@ -122,11 +122,30 @@ class HomeScreen extends StatelessWidget {
                 SnakbarMsg("Contact clicked..", context);
                 Navigator.pop(context);
               },
-
             )
-
           ],
         ),
+      ),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+              height: 100,
+              width: 100,
+              child: Image.network(
+                  "https://e7.pngegg.com/pngimages/666/815/png-clipart-dart-google-chrome-web-application-flutter-darts-blue-angle.png")),
+          Container(
+            height: 100,
+            width: 100,
+            child: Image.network("https://e7.pngegg.com/pngimages/666/815/png-clipart-dart-google-chrome-web-application-flutter-darts-blue-angle.png"),
+            margin: EdgeInsets.fromLTRB(50, 60, 60, 60),
+          ),
+          Container(
+              height: 100,
+              width: 100,
+              child: Image.network(
+                  "https://e7.pngegg.com/pngimages/666/815/png-clipart-dart-google-chrome-web-application-flutter-darts-blue-angle.png"))
+        ],
       ),
     );
   }
