@@ -82,6 +82,52 @@ class HomeScreen extends StatelessWidget {
           }
         },
       ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              padding: EdgeInsets.all(0),
+              child: UserAccountsDrawerHeader(
+                decoration: BoxDecoration(color: Colors.cyan),
+                accountName: Text("Md Eusuf Uddin"),
+                accountEmail: Text("eusuf.cse@gmail.com"),
+                currentAccountPicture: Image.network("https://e7.pngegg.com/pngimages/666/815/png-clipart-dart-google-chrome-web-application-flutter-darts-blue-angle.png"),
+                onDetailsPressed: (){
+                  SnakbarMsg("Details clicked....", context);
+                  Navigator.pop(context);
+                },
+              ),
+            ),
+            ListTile(
+              title: Text("About"),
+              leading: Icon(Icons.person),
+              onTap: () {
+                SnakbarMsg("About clicked..", context);
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text("Education"),
+              leading: Icon(Icons.edit),
+              onTap: () {
+                SnakbarMsg("Education clicked..", context);
+                Navigator.pop(context);
+              },
+
+            ),
+            ListTile(
+              title: Text("Contact"),
+              leading: Icon(Icons.contact_page),
+              onTap: () {
+                SnakbarMsg("Contact clicked..", context);
+                Navigator.pop(context);
+              },
+
+            )
+
+          ],
+        ),
+      ),
     );
   }
 }
