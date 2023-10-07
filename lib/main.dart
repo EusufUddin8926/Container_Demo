@@ -54,10 +54,32 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
         elevation: 6,
+        backgroundColor: Colors.cyan,
         onPressed: () {
           SnakbarMsg("Add item", context);
+        },
+        child: Icon(Icons.add),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        elevation: 6,
+        currentIndex: 0,
+        backgroundColor: Colors.cyan,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.sms), label: "Sms"),
+          BottomNavigationBarItem(icon: Icon(Icons.comment), label: "Comment"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile")
+        ],
+        onTap: (int index) {
+          if (index == 0) {
+            SnakbarMsg("Sms sent", context);
+          }
+          if (index == 1) {
+            SnakbarMsg("Comment Add", context);
+          }
+          if (index == 2) {
+            SnakbarMsg("Profile open", context);
+          }
         },
       ),
     );
